@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: websay
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: websay-dev
+  template:
+    metadata:
+      labels:
+        app: websay-dev
+    spec:
+      containers:
+      - image: bryanl/websay
+        name: websay

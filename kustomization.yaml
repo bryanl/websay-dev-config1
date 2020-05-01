@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- deployment.yaml
+- service.yaml
+- ingress.yaml
+commonLabels:
+  app: websay-dev
+images:
+- name: bryanl/websay
+  newName: bryanl/websay
+  newTag: 9859d361eb0d202831e90244a728cf7f14000891
